@@ -9,8 +9,8 @@
 #   Red Hat, Inc. - initial API and implementation
 
 FROM eclipse/stack-base:debian
-
-RUN  echo "Acquire::http::Proxy \"http://192.168.1.5:3142\";" | sudo tee /etc/apt/apt.conf.d/00proxy
+# apt ng cache
+# RUN  echo "Acquire::http::Proxy \"http://192.168.1.5:3142\";" | sudo tee /etc/apt/apt.conf.d/00proxy
 RUN sudo apt-get update && \
     sudo apt-get -y install build-essential libkrb5-dev gcc make debian-keyring python2.7 && \
     sudo apt-get clean && \
